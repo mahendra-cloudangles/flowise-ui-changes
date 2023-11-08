@@ -11,13 +11,13 @@ const Chatflows = Loadable(lazy(() => import('views/chatflows')))
 const Marketplaces = Loadable(lazy(() => import('views/marketplaces')))
 
 // apikey routing
-const APIKey = Loadable(lazy(() => import('views/apikey')))
+// const APIKey = Loadable(lazy(() => import('views/apikey')))
 
 // tools routing
-const Tools = Loadable(lazy(() => import('views/tools')))
+// const Tools = Loadable(lazy(() => import('views/tools')))
 
 // credentials routing
-const Credentials = Loadable(lazy(() => import('views/credentials')))
+// const Credentials = Loadable(lazy(() => import('views/credentials')))
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -36,8 +36,8 @@ const MainRoutes = {
         {
             path: '/marketplaces',
             element: <Marketplaces />
-        },
-        {
+        }
+        /* {
             path: '/apikey',
             element: <APIKey />
         },
@@ -48,7 +48,7 @@ const MainRoutes = {
         {
             path: '/credentials',
             element: <Credentials />
-        }
+        } */
     ]
 }
 

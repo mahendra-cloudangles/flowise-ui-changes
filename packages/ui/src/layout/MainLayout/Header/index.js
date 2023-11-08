@@ -1,26 +1,26 @@
-import PropTypes from 'prop-types'
-import { useSelector, useDispatch } from 'react-redux'
-import { useState } from 'react'
+// import PropTypes from 'prop-types'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // material-ui
 import { useTheme } from '@mui/material/styles'
-import { Avatar, Box, ButtonBase, Switch } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import { /* Avatar, Box, ButtonBase, Switch */ Box } from '@mui/material'
+// import { styled } from '@mui/material/styles'
 
 // project imports
 import LogoSection from '../LogoSection'
 import ProfileSection from './ProfileSection'
 
 // assets
-import { IconMenu2 } from '@tabler/icons'
+// import { IconMenu2 } from '@tabler/icons'
 
 // store
-import { SET_DARKMODE } from 'store/actions'
+// import { SET_DARKMODE } from 'store/actions'
 
 // ==============================|| MAIN NAVBAR / HEADER ||============================== //
 
-const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+/* const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
     padding: 7,
@@ -65,22 +65,23 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
         borderRadius: 20 / 2
     }
-}))
+})) */
 
-const Header = ({ handleLeftDrawerToggle }) => {
+const Header = (/* { handleLeftDrawerToggle } */) => {
     const theme = useTheme()
     const navigate = useNavigate()
 
-    const customization = useSelector((state) => state.customization)
+    // const customization = useSelector((state) => state.customization)
 
-    const [isDark, setIsDark] = useState(customization.isDarkMode)
-    const dispatch = useDispatch()
+    /* const [isDark, setIsDark] = useState(customization.isDarkMode)
+    const dispatch = useDispatch() */
 
-    const changeDarkMode = () => {
-        dispatch({ type: SET_DARKMODE, isDarkMode: !isDark })
-        setIsDark((isDark) => !isDark)
-        localStorage.setItem('isDarkMode', !isDark)
-    }
+    /* const changeDarkMode = () => {
+        dispatch({ type: SET_DARKMODE, isDarkMode: true })
+        setIsDark((isDark) => true)
+        localStorage.setItem('isDarkMode', true)
+        customization.isDarkMode = true
+    } */
 
     const signOutClicked = () => {
         localStorage.removeItem('username')
@@ -88,6 +89,11 @@ const Header = ({ handleLeftDrawerToggle }) => {
         navigate('/', { replace: true })
         navigate(0)
     }
+
+    /* // enforcing the dark mode by default
+    useEffect(() => {
+        changeDarkMode()
+    }, []) */
 
     return (
         <>
@@ -104,7 +110,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
                 <Box component='span' sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
                     <LogoSection />
                 </Box>
-                <ButtonBase sx={{ borderRadius: '12px', overflow: 'hidden' }}>
+                {/* <ButtonBase sx={{ borderRadius: '12px', overflow: 'hidden' }}>
                     <Avatar
                         variant='rounded'
                         sx={{
@@ -123,18 +129,18 @@ const Header = ({ handleLeftDrawerToggle }) => {
                     >
                         <IconMenu2 stroke={1.5} size='1.3rem' />
                     </Avatar>
-                </ButtonBase>
+                </ButtonBase> */}
             </Box>
             <Box sx={{ flexGrow: 1 }} />
-            <MaterialUISwitch checked={isDark} onChange={changeDarkMode} />
+            {/* <MaterialUISwitch checked={isDark} onChange={changeDarkMode} /> */}
             <Box sx={{ ml: 2 }}></Box>
             <ProfileSection handleLogout={signOutClicked} username={localStorage.getItem('username') ?? ''} />
         </>
     )
 }
 
-Header.propTypes = {
+/* Header.propTypes = {
     handleLeftDrawerToggle: PropTypes.func
-}
+} */
 
 export default Header

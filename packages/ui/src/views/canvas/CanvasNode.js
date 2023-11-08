@@ -19,8 +19,11 @@ import { baseURL } from 'store/constant'
 import { IconTrash, IconCopy, IconInfoCircle, IconAlertTriangle } from '@tabler/icons'
 import { flowContext } from 'store/context/ReactFlowContext'
 
+// Logo
+import mlanglesLogo from './mlangles_logo.svg'
+
 const CardWrapper = styled(MainCard)(({ theme }) => ({
-    background: theme.palette.card.main,
+    background: /* theme.palette.card.main */ '#212B46',
     color: theme.darkTextPrimary,
     border: 'solid 1px',
     borderColor: theme.palette.primary[200] + 75,
@@ -35,7 +38,7 @@ const CardWrapper = styled(MainCard)(({ theme }) => ({
 
 const LightTooltip = styled(({ className, ...props }) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
-        backgroundColor: theme.palette.nodeToolTip.background,
+        backgroundColor: /* theme.palette.nodeToolTip.background */ '#212B46',
         color: theme.palette.nodeToolTip.color,
         boxShadow: theme.shadows[1]
     }
@@ -149,13 +152,29 @@ const CanvasNode = ({ data }) => {
                 >
                     <Box>
                         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                            <Box style={{ width: 50, marginRight: 10, padding: 5 }}>
+                            <Box style={{ width: 50, marginRight: 5, padding: 5 }}>
                                 <div
                                     style={{
                                         ...theme.typography.commonAvatar,
                                         ...theme.typography.largeAvatar,
                                         borderRadius: '50%',
-                                        backgroundColor: 'white',
+                                        backgroundColor: '#070D19',
+                                        cursor: 'grab'
+                                    }}
+                                >
+                                    <img
+                                        style={{ width: '100%', height: '100%', padding: 5, objectFit: 'contain' }}
+                                        src={mlanglesLogo}
+                                        alt='mlangles|GenAI'
+                                    />
+                                </div>
+                            </Box>
+                            x
+                            <Box style={{ width: 50, marginRight: 10, padding: 3 }}>
+                                <div
+                                    style={{
+                                        ...theme.typography.commonAvatar,
+                                        ...theme.typography.largeAvatar,
                                         cursor: 'grab'
                                     }}
                                 >
@@ -171,7 +190,7 @@ const CanvasNode = ({ data }) => {
                                     sx={{
                                         fontSize: '1rem',
                                         fontWeight: 500,
-                                        mr: 2
+                                        mr: 1
                                     }}
                                 >
                                     {data.label}
@@ -191,7 +210,7 @@ const CanvasNode = ({ data }) => {
                         {(data.inputAnchors.length > 0 || data.inputParams.length > 0) && (
                             <>
                                 <Divider />
-                                <Box sx={{ background: theme.palette.asyncSelect.main, p: 1 }}>
+                                <Box sx={{ background: /* theme.palette.asyncSelect.main */ '#161D2F', p: 1 }}>
                                     <Typography
                                         sx={{
                                             fontWeight: 500,
@@ -202,6 +221,7 @@ const CanvasNode = ({ data }) => {
                                     </Typography>
                                 </Box>
                                 <Divider />
+                                {/* <Divider style={{ background: 'white' }} /> */}
                             </>
                         )}
                         {data.inputAnchors.map((inputAnchor, index) => (
@@ -227,7 +247,7 @@ const CanvasNode = ({ data }) => {
                             </div>
                         )}
                         <Divider />
-                        <Box sx={{ background: theme.palette.asyncSelect.main, p: 1 }}>
+                        <Box sx={{ background: /* theme.palette.asyncSelect.main */ '#161D2F', p: 1 }}>
                             <Typography
                                 sx={{
                                     fontWeight: 500,

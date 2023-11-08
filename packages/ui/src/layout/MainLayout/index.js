@@ -4,11 +4,9 @@ import { Outlet } from 'react-router-dom'
 
 // material-ui
 import { styled, useTheme } from '@mui/material/styles'
-import { AppBar, Box, CssBaseline, Toolbar, useMediaQuery } from '@mui/material'
+import { Box, CssBaseline, useMediaQuery } from '@mui/material'
 
 // project imports
-import Header from './Header'
-import Sidebar from './Sidebar'
 import { drawerWidth } from 'store/constant'
 import { SET_MENU } from 'store/actions'
 
@@ -78,7 +76,7 @@ const MainLayout = () => {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             {/* header */}
-            <AppBar
+            {/* <AppBar
                 enableColorOnDark
                 position='fixed'
                 color='inherit'
@@ -91,15 +89,21 @@ const MainLayout = () => {
                 <Toolbar>
                     <Header handleLeftDrawerToggle={handleLeftDrawerToggle} />
                 </Toolbar>
-            </AppBar>
+            </AppBar> */}
 
             {/* drawer */}
-            <Sidebar drawerOpen={leftDrawerOpened} drawerToggle={handleLeftDrawerToggle} />
+            {/* <Sidebar drawerOpen={leftDrawerOpened} drawerToggle={handleLeftDrawerToggle} /> */}
 
             {/* main content */}
-            <Main theme={theme} open={leftDrawerOpened}>
-                <Outlet />
-            </Main>
+            {/* <Main
+                // theme={theme}
+                open={leftDrawerOpened}
+                sx={{
+                    bgcolor: '#070D19'
+                }}
+            > */}
+            <Outlet />
+            {/* </Main> */}
         </Box>
     )
 }

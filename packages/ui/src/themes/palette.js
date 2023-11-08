@@ -4,6 +4,9 @@
  */
 
 export default function themePalette(theme) {
+    // enforce dark mode
+    theme.customization.isDarkMode = true
+
     return {
         mode: theme?.customization?.navType,
         common: {

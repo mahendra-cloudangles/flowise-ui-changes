@@ -16,6 +16,9 @@ import themeTypography from './typography'
 export const theme = (customization) => {
     const color = colors
 
+    // enforce dark mode
+    customization.isDarkMode = true
+
     const themeOption = customization.isDarkMode
         ? {
               colors: color,

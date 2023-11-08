@@ -156,7 +156,7 @@ const Marketplace = () => {
                                 {!isChatflowsLoading &&
                                     getAllChatflowsMarketplacesApi.data &&
                                     getAllChatflowsMarketplacesApi.data.map((data, index) => (
-                                        <Grid key={index} item lg={3} md={4} sm={6} xs={12}>
+                                        <Grid key={index} item /* lg={3} */ lg={4} md={4} sm={6} xs={12}>
                                             <ItemCard onClick={() => goToCanvas(data)} data={data} images={images[data.id]} />
                                         </Grid>
                                     ))}
@@ -167,7 +167,7 @@ const Marketplace = () => {
                                 {!isToolsLoading &&
                                     getAllToolsMarketplacesApi.data &&
                                     getAllToolsMarketplacesApi.data.map((data, index) => (
-                                        <Grid key={index} item lg={3} md={4} sm={6} xs={12}>
+                                        <Grid key={index} item /* lg={3} */ lg={4} md={4} sm={6} xs={12}>
                                             <ItemCard data={data} onClick={() => goToTool(data)} />
                                         </Grid>
                                     ))}

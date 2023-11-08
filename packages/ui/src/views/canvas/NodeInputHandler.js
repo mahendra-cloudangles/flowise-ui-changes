@@ -157,7 +157,7 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
                             style={{
                                 height: 10,
                                 width: 10,
-                                backgroundColor: data.selected ? theme.palette.primary.main : theme.palette.text.secondary,
+                                backgroundColor: /* data.selected ? theme.palette.primary.main : theme.palette.text.secondary */ '#B0D236',
                                 top: position
                             }}
                         />

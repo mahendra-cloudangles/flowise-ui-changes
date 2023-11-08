@@ -22,7 +22,8 @@ const StyledPopper = styled(Popper)({
         '& ul': {
             padding: 10,
             margin: 10
-        }
+        },
+        backgroundColor: '#070D19'
     }
 })
 

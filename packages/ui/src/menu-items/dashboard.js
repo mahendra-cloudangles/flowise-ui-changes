@@ -26,8 +26,8 @@ const dashboard = {
             url: '/marketplaces',
             icon: icons.IconBuildingStore,
             breadcrumbs: true
-        },
-        {
+        }
+        /* {
             id: 'tools',
             title: 'Tools',
             type: 'item',
@@ -50,7 +50,7 @@ const dashboard = {
             url: '/apikey',
             icon: icons.IconKey,
             breadcrumbs: true
-        }
+        } */
     ]
 }
 

@@ -11,7 +11,6 @@ import MainCard from 'ui-component/cards/MainCard'
 import ItemCard from 'ui-component/cards/ItemCard'
 import { gridSpacing } from 'store/constant'
 import WorkflowEmptySVG from 'assets/images/workflow_empty.svg'
-import { StyledButton } from 'ui-component/button/StyledButton'
 import LoginDialog from 'ui-component/dialog/LoginDialog'
 
 // API
@@ -24,7 +23,6 @@ import useApi from 'hooks/useApi'
 import { baseURL } from 'store/constant'
 
 // icons
-import { IconPlus } from '@tabler/icons'
 
 // ==============================|| CHATFLOWS ||============================== //
 
@@ -102,23 +100,27 @@ const Chatflows = () => {
 
     return (
         <MainCard sx={{ background: customization.isDarkMode ? theme.palette.common.black : '' }}>
-            <Stack flexDirection='row'>
-                <h1>Chatflows</h1>
+            <Stack /*  flexDirection='row' */>
+                <h1>App Hub</h1>
                 <Grid sx={{ mb: 1.25 }} container direction='row'>
                     <Box sx={{ flexGrow: 1 }} />
-                    <Grid item>
+                    {/* <Grid item>
                         <StyledButton variant='contained' sx={{ color: 'white' }} onClick={addNew} startIcon={<IconPlus />}>
                             Add New
                         </StyledButton>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Stack>
             <Grid container spacing={gridSpacing}>
                 {!isLoading &&
                     getAllChatflowsApi.data &&
                     getAllChatflowsApi.data.map((data, index) => (
-                        <Grid key={index} item lg={3} md={4} sm={6} xs={12}>
-                            <ItemCard onClick={() => goToCanvas(data)} data={data} images={images[data.id]} />
+                        <Grid key={index} item /* lg={3} */ lg={3} md={4} sm={6} xs={12}>
+                            <ItemCard
+                                onClick={() => goToCanvas(data)}
+                                data={data}
+                                /* images={images[data.id]} */
+                            />
                         </Grid>
                     ))}
             </Grid>
